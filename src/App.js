@@ -11,6 +11,7 @@ import Post from '../src/components/posts/Post';
 import AddPost from '../src/components/posts/AddPost';
 import EditPost from '../src/components/posts/EditPost';
 import Login from '../src/components/auth/Login';
+import Register from '../src/components/auth/Register';
 
 class App extends Component {
 	render() {
@@ -41,6 +42,11 @@ class App extends Component {
 									exact
 									path="/login"
 									component={UserIsNotAuthenticated(Login)}
+								/>
+								<Route
+									exact
+									path="/register"
+									component={UserIsAuthenticated(Register)}
 								/>
 							</Switch>
 						</div>

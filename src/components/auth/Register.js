@@ -10,7 +10,7 @@ import { notifyUser } from '../../actions/notifyActions';
 import Alert from '../layout/Alert';
 // import Spinner from '../layout/Spinner';
 
-class Login extends Component {
+class Register extends Component {
 	state = {
 		email: '',
 		password: ''
@@ -22,7 +22,7 @@ class Login extends Component {
 		const { firebase, notifyUser } = this.props;
 		const { email, password } = this.state;
 		firebase
-			.login({
+			.createUser({
 				email,
 				password
 			})
@@ -41,7 +41,7 @@ class Login extends Component {
 				<div className="col-md-6 mx-auto">
 					<div className="card">
 						<h1 className="card-header text-center">
-							<i className="fa fa-lock" /> Login
+							<i className="fa fa-user" /> Register
 						</h1>
 						<div className="card-body">
 							{message ? (
@@ -77,7 +77,7 @@ class Login extends Component {
 								</div>
 								<input
 									type="submit"
-									value="Login"
+									value="Register"
 									className="btn btn-dark btn-block"
 								/>
 							</form>
@@ -89,7 +89,7 @@ class Login extends Component {
 	}
 }
 
-Login.propTypes = {
+Register.propTypes = {
 	firebase: PropTypes.object.isRequired,
 	notify: PropTypes.object.isRequired,
 	notifyUser: PropTypes.func.isRequired
@@ -103,4 +103,4 @@ export default compose(
 		}),
 		{ notifyUser }
 	)
-)(Login);
+)(Register);

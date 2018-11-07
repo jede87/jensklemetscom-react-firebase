@@ -46,7 +46,13 @@ class Footer extends Component {
 											<i className="fa fa-unlock" />{' '}
 											{auth.email}
 										</a>
-
+										<Link
+											to="/register"
+											className="btn btn-info"
+										>
+											<i className="fa fa-user" />{' '}
+											register user
+										</Link>
 										<Link
 											to="/post/add"
 											className="btn btn-success"
